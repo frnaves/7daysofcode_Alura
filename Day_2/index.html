@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <title>Day 2 - Lógica JS 2/7: 👩🏽‍💻 Variáveis</title>
+
+</head>
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">#7DaysOfCode</a>
+
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_1/index.html">Day 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" >Day 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 7</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav> 
+
+      <div class="container mt-5">
+
+        <h1>Lógica JS 2/7: 👩🏽‍💻 Variáveis</h1> 
+      
+
+          <p>Sabe quando você se cadastra em um site e, logo em seguida, quando faz o seu login, ele já te chama pelo seu nome? É isso que você vai fazer no desafio de hoje!</p>
+
+          <p>Quando você cria algum sistema, site ou aplicativo, é comum querer colocar alguns toques personalizados para tornar a experiência na sua aplicação mais rica e dinâmica.</p>
+
+          <p>Fazer isso através da programação pode não ser uma tarefa muito fácil. Dependendo do nível de customização que você quiser implementar, a quantidade de código que você precisará escrever pode ser imensa.</p>
+
+          <p>Mas é claro que você pode começar de uma maneira mais simples. Para isso, o importante é entender como capturar e armazenar valores dentro de variáveis. E é nisso que eu vou te ajudar hoje!</p>
+
+          <p>Variáveis são os blocos básicos de construção de qualquer sistema e são essenciais para processar qualquer tipo de informação, seja ela de uma pessoa logada no sistema ou mesmo para exibir detalhes de produtos em um catálogo de e-commerce.</p>
+
+          <p>Por isso, hoje, eu vou te ensinar a desenvolver um programa simulando um desses sites. Ele deve pedir para o usuário responder 3 perguntas:</p>
+
+          <blockquote class="blockquote">
+            <ul>
+              <li>Qual o seu nome?</li>
+              <li>Quantos anos você tem?</li>
+              <li>Qual linguagem de programação você está estudando?</li>
+            </ul>
+          </blockquote>
+
+
+          <p>À medida que as perguntas forem sendo feitas, a pessoa que estiver usando o programa deve responder cada uma delas.</p>
+
+          <p>No final, o sistema vai exibir a mensagem:</p>
+
+          <pre class="line-numbers"><code class="language-javascript">"Olá [nome], você tem [idade] anos e já está aprendendo [linguagem]!"</code></pre>
+
+          <p>Note que cada informação entre [ ] é uma das respostas dadas pela pessoa.</p>
+
+        <h2 style="background-color: bisque;" class="py-1 mt-4">EXECUÇÃO DO EXERCÍCIO</h2>
+
+          <p>Considerando o enunciado do exercício acima, irei fazer 3 inputs aqui no código HTML, e processarei eles utilizando Javascript.</p> 
+        
+          <hr>
+        <h3>Formulário Day 2</h3>
+
+        <form  id="myForm">
+          <div class="form-group">
+            <label for="nome">Qual o seu nome?</label> 
+            <input type="text" class="form-control" name="nome" id="nome" required><br>
+          </div>
+          
+          <div class="form-group">
+            <label for="idade">Quantos anos você tem?</label>
+            <input type="number" class="form-control" name="idade" id="idade" min="14" max="300" required><br>
+          </div>
+
+          <div class="form-group">
+            <label for="prog">Qual linguagem de programação você está estudando?</label>
+            <input type="text" class="form-control" name="prog" id="prog" required><br>
+          </div>
+
+          <button type="button" onclick="showData()" class="btn btn-primary">Responder</button>
+        </form>
+        <hr>
+
+        <h3>Saída</h3>
+
+        <div class="mt-4" id="output"></div>
+
+        <hr>
+
+
+
+
+        
+
+
+
+
+        <h2 style="background-color: bisque;" class="py-1 mt-4">EXERCÍCIO OPCIONAL</h2>
+    
+          <p>Se você quiser se aprofundar no assunto de hoje, eu tenho mais um exercício para você. Mas ele é 100% opcional.
+          </p>
+          <p>Você vai complementar o código para que, depois de exibir a mensagem anterior, o programa pergunte:</p>
+
+          <pre class="line-numbers">
+            <code class="language-javascript">
+              Você gosta de estudar [linguagem]? Responda com o número 1 para SIM ou 2 para NÃO.
+            </code>
+          </pre>
+
+          E aí, dependendo da resposta, ele deve mostrar uma das seguintes mensagens:
+
+          <pre class="line-numbers">
+            <code class="language-javascript">
+              1 > Muito bom! Continue estudando e você terá muito sucesso.
+              2 > Ahh que pena... Já tentou aprender outras linguagens?
+            </code>
+          </pre>
+
+         <h2 style="background-color: bisque;" class="py-1 mt-4">DICA</h2>
+            <p>Você pode adicionar quantas perguntas quiser, e pode aproveitar as respostas dos usuários na mensagem que será exibida.Para imprimir e receber valores, você pode tanto usar console.log, prompt e alert, quanto usar HTML e CSS caso já tenha conhecimento nessas duas tecnologias.</p>
+            <p>Você pode usar a estrutura condicional if para resolver o Exercício Opcional. Algo como:</p>
+          
+
+            <pre class="line-numbers">
+              <code class="language-javascript">
+                if (resposta == 1){
+                    // dê a resposta positiva
+                }
+                if (resposta == 2){
+                    // dê a resposta negativa
+                }
+              </code>
+            </pre>
+
+          <h2 style="background-color: bisque;" class="py-1 mt-4">EXTRA</h2>
+            <p>
+              Tanto o alert() quanto o prompt() são usados para criar caixas de diálogo e interagir com o usuário, mas eles são diferentes entre si.
+              O alert() é usado para mostrar uma mensagem simples ao usuário.
+              Exemplo:
+            </p>
+
+            <pre class="line-numbers">
+              <code class="language-javascript">
+                alert(“Olá, pessoal!”);
+              </code>
+            </pre>
+
+            Já o prompt() precisa que o usuário insira algum valor, que você poderá manipular.
+
+            Exemplo:
+
+            <pre class="line-numbers">
+              <code class="language-javascript">
+                const cidade = prompt("Digite a sua cidade:");
+                const msg = `Você é de ${cidade}!`;
+                alert(msg);
+              </code>
+            </pre>
+
+            Teste os códigos acima e tente adaptá-los ao seu programa!
+
+
+
+          
+          
+                
+      </div>
+      
+      <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sobre nós -->
+                <div class="col-md-4 mb-3">
+                    <h5>Sobre nós</h5>
+                    <p>Informações sobre a empresa, missão e visão. Compartilhamos nosso propósito e valores.</p>
+                </div>
+
+                <!-- Links de navegação -->
+                <div class="col-md-4 mb-3">
+                    <h5>Navegação</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contato</h5>
+                    <address>
+                        Rua Exemplo, 123<br>
+                        Cidade, Estado<br>
+                        <a href="tel:+5521999999999" class="text-light text-decoration-none">+55 (21) 99999-9999</a><br>
+                        <a href="mailto:contato@exemplo.com" class="text-light text-decoration-none">contato@exemplo.com</a>
+                    </address>
+                </div>
+            </div>
+
+            <hr class="bg-light">
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+      </footer>
+
+    </main>    
+  </body>
+</html>

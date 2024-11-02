@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+
+    <title>Day 1 - Lógica JS 1/7: Operações Booleanas</title>
+
+</head>
+<body>
+  <main>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">#7DaysOfCode</a>
+
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Day 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_2/index.html">Day 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html">Day 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_4/index.html">Day 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_5/index.html">Day 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_6/index.html">Day 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_7/index.html">Day 7</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+
+    
+
+
+   <div class="container mt-5">
+       
+       
+            <h1>Lógica JS 1/7: Operações Booleanas</h1>
+            <blockquote class="blockquote">Chegou a hora, Felipe! Você vai começar a sua jornada no <mark>#7DaysOfCode</mark></blockquote>
+            <p>Este primeiro dia é super importante! Ao final dele, você terá um novo conhecimento que é essencial para os próximos desafios.</p>
+            <p>Existe uma situação super comum para quem utiliza o Javascript: problemas com os tipos de variáveis na hora de comparar os valores de duas variáveis entre si. Eu já passei muito por isso!</p>
+            <p>Em linguagens de programação compiladas, como Java e C#, <strong>esse problema é detectado em tempo de compilação</strong>, e você que está desenvolvendo o código tem um aviso claro do erro.</p>
+            <p>Já no Javascript, <strong>esses erros passam despercebidos</strong>, já que o código não passa por um compilador. Ou seja, os erros só aparecem em tempo de execução.</p>
+            <p>A parte mais confusa para quem está começando a aprender lógica com Javascript é a operação de igualdade entre valores. Dependendo de como você escrever o seu código, o Javascript fará uma conversão de tipo para um tipo booleano de maneira implícita (automática), e isso afetará variáveis que eram Strings, Numbers, Object, etc….</p>
+            <p>Isso causa alguns comportamentos estranhos, como todos esses exemplos aqui abaixo retornando <em>true:</em></p>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+        console.log( false == '0' ); /* True */<br>
+        console.log( null == undefined ); /* True */ <br>
+        console.log( " \t\r\n" == 0 ); /* True */ <br>
+        console.log( ' ' == 0 ); /* True */
+                    </code>
+                </pre>
+            <p>O que não faz necessariamente muito sentido.</p>
+            <p>(Você pode testar tudo isso indo no seu navegador, clicando com o botão direito, escolhendo a opção “Inspecionar” e a aba “Console”. Nessa aba, basta copiar e colar cada uma das linhas acima para confirmar que todas realmente retornam true).</p>
+            <p>Sendo assim, a sua tarefa de hoje é <strong>
+                <mark>reescrever o código abaixo de maneira que ele imprima as informações de maneira correta</mark>
+            </strong>, que faça sentido e sem erros:</p>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+        let numeroUm = 1;
+        let stringUm = '1';
+        let numeroTrinta = 30;
+        let stringTrinta = "30";
+        let numeroDez = 10;
+        let stringDez = '10';
+        if (numeroUm == stringUm) { //COMPARAR O numeroUm e a stringUm
+            console.log('As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes');
+        } else {
+            console.log('As variáveis numeroUm e stringUm não tem o mesmo valor');
+        }
+        if (numeroTrinta === stringTrinta) { //COMPARAR O numeroTrinta e a stringTrinta
+            console.log('As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo');
+        } else {
+            console.log('As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo');
+        }
+        if (numeroDez == stringDez) { //COMPARAR O numeroDez e a stringDez
+            console.log('As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes');
+        } else {
+            console.log('As variáveis numeroDez e stringDez não tem o mesmo valor');
+        }
+                    </code>
+                </pre>
+       
+            <h2>Dica</h2>
+            <p>Você também pode utilizar o próprio navegador para executar esse seu programa, caso ainda não tenha familiaridade com editores de código, como o Visual Studio Code.Para isso, como eu falei acima, basta você clicar com o botão direito do mouse em qualquer página, selecionar a opção “Inspecionar”, ir na aba “Console” e digitar o seu código. Bem simples, né?</p>
+            <p>Se você quiser mudar os nomes das variáveis e valores, fique à vontade. Mas jamais imprima algo que não seja verdadeiro, hein!</p>
+            <h2>Extra</h2>
+            <p>Separei um artigo da Alura para você <a href="https://empresas.alura.com.br/e3t/Ctc/I8+113/d2z6gD04/VW2LnX4hydGjW89s7Dh6FmJ7XW4CCSrm5mGm1BN6mkvpC5kvg0W6N1X8z6lZ3lcW6GQvfz6dqYWfW3xvqL67Q9NVXW5Vrrvb8TGz2mW3BbljY1N8X-fW5F7CpR7NVwBvW34kyny3GllShW814VbG6cm25lW5Jb2yW6_MRyNN8gmZjlc6Xd2W5R5TB33_mkTbVvJfX58wGTyhW8W5Qr84czrsBW3SXch-5d8kjkVvkBZG28mpZ0VyGq9z7295rjW5tzPXs4csB7YN6VQ1gZ74PwjN2bTGK9h2MXxW6Pfz1x1STGpKW2Xs65C87F0yRVnZ2bh1KTFZ4W1wTFDP3g61hNW7RmkFs3PhWqNW1j-9Gw5hhXfmW7yLbtS70gTNvW6M_w_955FXGxMljR7bBKvNnW90MdCq4pXHKKTMyxw5thV-_W4RrQTg6GYN8VVhNFXw8WsXRlW1x1wNH3jDZQtW68NDDt74TsT6VtG0Ft3q0XkkW1l2t_P8dxhZTW67vB7180xTW5W5_q3ry4Mkn66W4mMRh33BF-X1f4C_N2s04" rel="external" target="_blank">aprender mais sobre operadores de comparação.</a></p>
+       
+       
+       
+   </div>
+
+   <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Sobre nós -->
+            <div class="col-md-4 mb-3">
+                <h5>Sobre nós</h5>
+                <p>Informações sobre a empresa, missão e visão. Compartilhamos nosso propósito e valores.</p>
+            </div>
+
+            <!-- Links de navegação -->
+            <div class="col-md-4 mb-3">
+                <h5>Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light text-decoration-none">Início</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Serviços</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Contato</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="col-md-4 mb-3">
+                <h5>Contato</h5>
+                <address>
+                    Rua Exemplo, 123<br>
+                    Cidade, Estado<br>
+                    <a href="tel:+5521999999999" class="text-light text-decoration-none">+55 (21) 99999-9999</a><br>
+                    <a href="mailto:contato@exemplo.com" class="text-light text-decoration-none">contato@exemplo.com</a>
+                </address>
+            </div>
+        </div>
+
+        <hr class="bg-light">
+
+        <!-- Copyright -->
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    </main>
+    
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica JS 5/7: Arrays e coleções</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">#7DaysOfCode</a>
+
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_1/index.html">Day 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_2/index.html">Day 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html" >Day 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_4/index.html" >Day 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Day 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_6/index.html" >Day 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_7/index.html">Day 7</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+    </nav> 
+
+    <main>
+        <div class="container mt-3 p-5">
+
+            <h1>Lógica JS 5/7: Arrays e coleções</h1>
+
+            <P>Sabe quando você vai no supermercado com uma lista de compras e acaba ficando indo e voltando nos mesmos corredores até completar a lista?</P>
+
+            <P>Você precisa de uma maçã e vai para a área de frutas. O próximo item é um leite e você segue para os laticínios. Mas em seguida você anotou a pêra, e precisa novamente retornar para a área de frutas.</P>
+
+            <blockquote class="blockquote">
+              <P><strong>Depois que você resolver o desafio de hoje, com certeza não fará mais isso!</strong></P>
+            </blockquote>
+
+            <P>Assim como a nossa lista de compras, é muito comum que programas trabalhem com listas de strings, números e objetos.</P>
+
+            <P>Pense em todo catálogo de e-commerce que você já viu, na lista de eventos do seu Google Calendar, ou ainda na sua caixa de e-mails. Todos esses sites usam listas para exibir informações de uma forma simples e fácil de entender.</P>
+
+            <P>Além disso, você pode aproveitar as listas para fazer filtros, ordenação, e outras funcionalidades muito úteis.</P>
+
+            <P>Nesse ponto, você já deve ter percebido que trabalhar com essas coleções é algo que você vai precisar dominar, né?</P>
+
+            <P>Então hoje, para facilitar a sua ida ao supermercado, você deve criar um programa em Javascript que perguntará se você deseja adicionar uma comida na sua lista de compras, e você deve poder responder com sim ou não.</P>
+
+            <P>Em seguida, ele perguntará qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.</P>
+
+            <P>Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, como frutas, laticínios, congelados, doces e o que mais você achar interessante. Assim, você poderá separar tudo no seu devido grupo.</P>
+
+            <P>Por fim, caso você não queira mais adicionar nada na lista de compras e responder não na primeira pergunta, ele irá exibir uma lista com todos os itens agrupados, da seguinte forma:</P>
+
+            <P>
+              Caso você adicione na sua lista:
+              banana, leite em pó, tomate, leite vegetal, chiclete, bala de ursinho, maçã, uva, abacate e leite de vaca
+            </P>
+
+            <P>O programa deverá imprimir, por exemplo:</P>
+
+            <pre>
+              Lista de compras:
+                  Frutas: banana, tomate, maçã, uva, abacate
+                  Laticínios: leite vegetal, leite de vaca, leite em pó
+                  Congelados:
+                  Doces: chiclete e bala de ursinho
+            </pre>
+
+
+
+            <h2>DICA</h2>
+            <P>Existe um objeto dentro da linguagem Javascript que é usado justamente para criar listas de elementos, chamado Array. Use e abuse dele!</P>
+
+            <P>Lembre-se que você sempre pode estilizar da maneira que quiser o seu programinha, inclusive utilizando outras tecnologias para isso, como HTML e CSS.</P>
+
+            <P>Porém, isso não é obrigatório na nossa lista de lógica de programação com Javascript. Como eu já mencionei nos dias anteriores, você pode usar recursos como console.log, alert e prompt para desenvolver o seu programa.</P>
+
+            <P>Não se esqueça de compartilhar o seu código no seu GitHub e nas suas redes sociais com a hashtag #7DaysOfCode, e também com #feedback7DoC caso você precise de alguma ajuda.</P>
+
+
+
+            <h2>EXTRA</h2>
+
+            <p>Para criar um array vazio, você pode usar colchetes. E aí, para inserir algo em um array, você pode usar a função .push(). Por exemplo:</p>
+
+            <pre class="line-numbers">
+              <code class="language-javascript">
+                let meuArray = [];
+                meuArray.push(elemento1);
+              </code>
+            </pre>
+
+            <p>Depois disso, o array não estará mais vazio, ele terá o elemento1.</p>
+
+            <p>Para aprender mais sobre arrays em Javascript, dê uma olhada <a href="https://empresas.alura.com.br/e3t/Ctc/I8+113/d2z6gD04/VX5-YJ489KSCW7pQrpl9hGV_4W430FVB5mQX_dN8rPF623lYMRW8wLKSR6lZ3q3W7DCNvL8VX3XKW2KWClv7Ll7d5W2xS0c834VgkjW5NNzK46kSH4KW5D7hTD5n8k5lW8Xlp9y8Mfw77W68gtWh5MwQ2wN8_kb3K87GHQW738XXs7vXNNsW5DcDS8451vmbN4D-SgLM1zfZW1x8LG12jKGqRW22xwn12P1pBCVvgDnQ8v7xmnW724M1g97l1VpW4Whj_N7cQyGhVrF3d-7qJgNrW95HBb_1bGzmHW1QWh-X6PN_RfN2jBv6yvrZZ6VmN3Cj4-NBsrW1jcwRN3nNWqnW6lwYfK1fPf87W1HzVb73PmGQBW8tpdvn41BVk2W3Z3jcW1LghlDW6f2shf6FL7TtN3qlxTV4G8TYf1LZHRj04" target="_blank">nesse site</a>.</p>
+
+            <h2>SOLUÇÃO</h2>
+
+            <h3>Registro</h3>
+
+            <label for="item">Nome: </label>
+            <input type="text" name="item" id="item" required>
+
+            <label for="tipo">Tipo</label>
+            <input list="options" id="tipo" name="tipo" required>
+            <datalist id="options"> 
+              <option value="frutas"></option>
+              <option value="laticinios"></option>
+              <option value="congelados"></option>
+              <option value="doces"></option>
+            </datalist>
+
+            <input type="button" onclick="registrar()"  value="Registrar">
+
+            <hr>
+            <h3>Lista de Frutas</h3>
+
+
+
+            <div id="lista">
+              
+            </div>
+
+
+
+            
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sobre nós -->
+                <div class="col-md-4 mb-3">
+                    <h5>Sobre nós</h5>
+                    <p>Informações sobre a empresa, missão e visão. Compartilhamos nosso propósito e valores.</p>
+                </div>
+
+                <!-- Links de navegação -->
+                <div class="col-md-4 mb-3">
+                    <h5>Navegação</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contato</h5>
+                    <address>
+                        Rua Exemplo, 123<br>
+                        Cidade, Estado<br>
+                        <a href="tel:+5521999999999" class="text-light text-decoration-none">+55 (21) 99999-9999</a><br>
+                        <a href="mailto:contato@exemplo.com" class="text-light text-decoration-none">contato@exemplo.com</a>
+                    </address>
+                </div>
+            </div>
+
+            <hr class="bg-light">
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+      </footer>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica JS 7/7: Funções em Javascript</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">#7DaysOfCode</a>
+
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_1/index.html">Day 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_2/index.html">Day 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html" >Day 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_4/index.html" >Day 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_5/index.html">Day 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" >Day 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_7/index.html">Day 7</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+    </nav> 
+
+    <main>
+        <div class="container mt-3 p-5">
+
+            <h1>Lógica JS 7/7: Funções em Javascript</h1>
+
+            Esta foi uma semana e tanto, né?
+
+<p>Você praticou muita coisa sobre lógica de programação com Javascript, mas ainda falta uma coisa muito importante: organizar o seu código.</p>
+
+<p>E sim, isso é algo obrigatório para aprender como pessoa desenvolvedora, pois uma hora ou outra na sua carreira você vai precisar dar manutenção no seu código criado, ou até ajeitar algo no código que outra pessoa escreveu.</p>
+
+<p>Imagina só se esse código estiver todo bagunçado?</p>
+
+<p>Uma ótima prática é sempre separar cada trecho do seu código que realizará alguma função específica em blocos de código ainda menores, que poderão ser reutilizados e chamados a qualquer outro momento ao longo do seu programa. São as chamadas funções.</p>
+
+<p>Para o exercício de hoje: você já parou para pensar como uma calculadora funciona?</p>
+
+<p>Ela pede para você digitar um número, depois você seleciona um tipo de operação, um outro número, e ela faz sozinha o cálculo para te mostrar o resultado! Incrível, né?</p>
+
+<p>Neste último desafio, a minha proposta para você é: crie a sua própria calculadora, porém com um detalhe muito importante: cada operação deverá ser uma função diferente no seu código.</p>
+
+<p>Primeiramente, a pessoa deverá escolher uma opção de operação impressa pelo programa na tela.</p>
+
+<p>Depois, ela deverá inserir os dois valores que deseja utilizar, e o programa imprimirá o resultado da operação em questão.</p>
+
+<p>As opções disponíveis deverão ser: soma, subtração, multiplicação, divisão, e sair. Nessa última, o programa deverá parar de ser executado, mostrando uma mensagem "Até a próxima".</p>
+
+
+
+
+            <h2>DICA</h2>
+
+            <p>Cada operação deverá ter uma função diferente no seu código, que receberá os valores inseridos como parâmetros e retornará com o resultado da operação.</p>
+
+            <p>Não esqueça de usar estruturas de repetição para fazer a calculadora imprimir a escolha de operação até que a pessoa deseje parar o programa.</p>
+            
+            <p>Lembre-se também de que, além do if e else, também temos o switch, muito interessante de se utilizar em casos como esse, de múltipla escolha.</p>
+            
+            <p>Personalize a sua calculadora da maneira que achar mais legal, e não se esqueça de compartilhá-la no seu GitHub e nas suas redes sociais com a hashtag #7DaysOfCode, e também com #feedback7DoC caso você precise de alguma ajuda.</p>
+
+
+
+            <h2>EXTRA</h2>
+            <p>Para aprender mais sobre funções em Javascript, dê uma olhada <a href="https://empresas.alura.com.br/e3t/Ctc/I8+113/d2z6gD04/VX7mj51vxD8gW2mtNLX8TDKdgVLsY3L5mWctzM7WCRK3lYMRW7Y8-PT6lZ3mdW8xWBCD3t3C1BN4FYwG8WDvxxW4TzQL-3FGgLjW3YMV9N8pPyhkVsF8N51rKJYDW4x8GC57gVT9xW903b7X2bsN0KW7YCkCn7LYlGdW94Fwmj85ntBrW4MNYmq3zfM45W14PVHn2Nq7-fW8TdgJb1Q8ykFW6KyRSp5CbKxsVCZGbC44DR2RW5ChJp35Wf46jW9hGYg08g4d3RW9ddjgk1h1SynW3JR5Kd6z_kJSW8tFYYf4KwnktW2TdN-b6Zw3K3W3W-hYL5YQNwTW8qLFnL5vQzm-W9lSkFw5tHXHGW5hgZtS7TbvjLW1Ngxhm3w2DDLW7G3bCP4MKlQ2f2KyCN204" target="_blank">nesse site</a>.</p>
+
+            <p>Caso ainda não tenha estudado sobre o switch também, confira <a href="https://empresas.alura.com.br/e3t/Ctc/I8+113/d2z6gD04/VX7mj51vxD8gW2mtNLX8TDKdgVLsY3L5mWctzM7WCS03lYMRW8wLKSR6lZ3mYW90_3RD2Rv6myW8nL-Tx7rpJSwW90qc8j7KxKWvN1tXhx2NVkGcW3ykMpN42zQ_sN8YNLQRs_S-6W4BwT0797z2s2W1Bm-Bx4lGNKzW408_h02zR4L5W5WCXJr136rkMW2vl5cw1v57DvW7y56CF4LrQtDW8Pqjkf40XPXMW6cVNFc3j6WmGW2TGJQy34KvltW3Gpsc5722F58W7FLB5n96hNHfW97rHk930NlgSW19YWdX76Fsm-W8nLb5L7VKqGvN2dcdWnJ2QD6W7qXhnj92L-J2W2CdSx33p1-sZW1dQpyZ1bN7g2W4LtXWl2WYVm8W6-P62B35zldwW13rJMg2Dd80fVcC9LW4mJBmZf2mn_jx04" target="_blank">esse site</a>.</p>
+
+             
+
+            <h2>SOLUÇÃO</h2>
+            
+            <input type="number" name="op1" id="op1"> 
+            <input type="number" name="op2" id="op2"> <br>
+
+            <input type="button" onclick="soma()" value="+">
+            <input type="button" onclick="subtracao()" value="-">
+            <input type="button" onclick="multi()" value="*">
+            <input type="button" onclick="divide()" value="/"> <br>
+
+
+            <input type="button" onclick="sair()" value="Sair"> 
+
+
+            
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sobre nós -->
+                <div class="col-md-4 mb-3">
+                    <h5>Sobre nós</h5>
+                    <p>Informações sobre a empresa, missão e visão. Compartilhamos nosso propósito e valores.</p>
+                </div>
+
+                <!-- Links de navegação -->
+                <div class="col-md-4 mb-3">
+                    <h5>Navegação</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contato</h5>
+                    <address>
+                        Rua Exemplo, 123<br>
+                        Cidade, Estado<br>
+                        <a href="tel:+5521999999999" class="text-light text-decoration-none">+55 (21) 99999-9999</a><br>
+                        <a href="mailto:contato@exemplo.com" class="text-light text-decoration-none">contato@exemplo.com</a>
+                    </address>
+                </div>
+            </div>
+
+            <hr class="bg-light">
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+      </footer>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica JS 6/7: 👩🏽‍💻 Remoção de Arrays</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">#7DaysOfCode</a>
+
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_1/index.html">Day 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_2/index.html">Day 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_3/index.html" >Day 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_4/index.html" >Day 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_5/index.html">Day 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" >Day 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Day_7/index.html">Day 7</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+    </nav> 
+
+    <main>
+        <div class="container mt-3 p-5">
+
+            <h1>Lógica JS 6/7: 👩🏽‍💻 Remoção de Arrays</h1>
+
+            <p>Sabe o programinha que você criou ontem para montar a sua própria lista de compras? Hoje o seu desafio é deixar ele ainda mais legal!</p>
+
+            <p>Você já viu como trabalhar com arrays de forma simples, adicionando itens na sua lista de compras.</p>
+
+            <p>Outra operação muito comum é a de remoção de itens da lista e, por isso, é muito importante que você saiba como fazer isso.</p>
+
+            <p>Pensando a fundo, existem N maneiras de deletar um item de uma lista. Você pode remover o primeiro item, o último, ou qualquer um do meio da lista. Cada uma dessas operações tem o seu próprio método dentro das documentações dos arrays em Javascript. Vamos falar mais sobre esses métodos na seção "Dicas".</p>
+
+            <p>Você deverá criar a opção de remover algum item da lista, que será exibida junto à pergunta de “você deseja adicionar uma comida na lista de compras”?</p>
+
+            <p>A partir daí, caso a pessoa escolha essa opção, o programa irá imprimir os elementos presentes na lista atual, e a pessoa deverá escrever qual deles deseja remover.</p>
+
+            <p>Depois disso, o programa irá remover o elemento da lista e imprimir a confirmação de que o item realmente não está mais lá.</p>
+
+            <p>Por fim, ele voltará para o ciclo inicial de perguntas.</p>
+
+            <p>Se, na hora de deletar o item, o mesmo não for encontrado na lista, você deverá exibir uma mensagem avisando isso.</p>
+
+            <p>Por exemplo: “Não foi possível encontrar o item dentro da lista!”</p>
+
+            <p>Lembre-se que a opção de remover um item só deverá estar disponível a partir do momento que existir ao menos um elemento dentro da lista de compras.</p>
+
+
+
+            <h2>DICA</h2>
+
+            <p>Você pode fazer a procura do elemento que a pessoa deseja apagar da forma que quiser, usando métodos do Javascript para isso.</p>
+
+<p>Existe o método <code>.includes(elemento)</code>, que retorna true ou false se o array em questão contém o tal elemento ou não.</p>
+
+<p>Existe também o método <code>.indexOf(elemento)</code>, que retorna a posição desse elemento dentro do array, ou -1, caso não o encontre.</p>
+
+<p>Já para a remoção em si, existem diferentes métodos. O método o <code>shift</code>, por exemplo, remove sempre o primeiro item da lista; o método <code>pop</code> remove o último; já o método <code>splice</code> remove um certo número de itens a partir de uma determinada posição. Escolha o que você achar que faz mais sentido para o seu programinha.</p>
+           
+
+
+
+            <h2>EXTRA</h2>
+
+            <p>Para aprender mais sobre métodos para arrays no Javascript, dê uma olhada <a href="https://empresas.alura.com.br/e3t/Ctc/I8+113/d2z6gD04/MWb874QkDs9W8N0D50576WYTW2v98dD5mT3M6N1RGL_x3lYMRW8wLKSR6lZ3pCW9ggDbm4NvSqJW2z3XR64CsS2XW1jX3xp1m4tk2W7krycW12w5gBW3nvPp25QkqFqN1NYhQFM2lhjW79VckR17vfcDN2XMYJnvXtfrW69X3Bp4S2bmMW1qdtq24S4H9VW83q3Gx73KnnmW1ncKtL3J9jP2W871Y1K7LfLshW3_npGb8m7nR4W8Wnqhj5t1qjyVGDSRQ1SJxTYW3BYxCv7gxkjBW3CjjLr3xTCJrW5z_1fm1fk4VTW45CfC37T5St2W7g-m6C72Y8VKW2MCfWX7qcNpLN7GJ75qY-Hp1N7Kx7fHd7vcHN8z1CGB_kh3LW4d3Wy37g3VqrW8S4GcX6kHtzLW8_lC0M25s170f76DBH-04" target="_blank">nesse site</a>.</p>
+
+            <p>Lembre-se que você pode sempre personalizar o seu programinha da maneira que achar melhor, e não se esqueça de compartilhá-lo no seu GitHub e nas suas redes sociais com a hashtag #7DaysOfCode, e também com #feedback7DoC caso você precise de alguma ajuda.</p>            
+
+            <h2>SOLUÇÃO</h2>
+
+            <h3>Registro</h3>
+
+            <label for="item">Nome: </label>
+            <input type="text" name="item" id="item" required>
+
+            <label for="tipo">Tipo</label>
+            <input list="options" id="tipo" name="tipo" required>
+            <datalist id="options"> 
+              <option value="frutas"></option>
+              <option value="laticinios"></option>
+              <option value="congelados"></option>
+              <option value="doces"></option>
+            </datalist>
+
+            <input type="button" onclick="registrar()"  value="Registrar">
+
+
+            <h3>Remover produto</h3>
+
+            <label for="item2">Nome: </label>
+            <input type="text" name="item2" id="item2" required>
+
+            <label for="tipo2">Tipo</label>
+            <input list="options" id="tipo2" name="tipo2" required>
+            <datalist id="options"> 
+              <option value="frutas"></option>
+              <option value="laticinios"></option>
+              <option value="congelados"></option>
+              <option value="doces"></option>
+            </datalist>
+            <input type="button" onclick="remover()"  value="Remover">
+
+            <hr>
+            <h3>Lista de Frutas</h3>
+
+
+
+            <div id="lista">
+              
+            </div>
+
+
+
+
+
+            
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sobre nós -->
+                <div class="col-md-4 mb-3">
+                    <h5>Sobre nós</h5>
+                    <p>Informações sobre a empresa, missão e visão. Compartilhamos nosso propósito e valores.</p>
+                </div>
+
+                <!-- Links de navegação -->
+                <div class="col-md-4 mb-3">
+                    <h5>Navegação</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contato</h5>
+                    <address>
+                        Rua Exemplo, 123<br>
+                        Cidade, Estado<br>
+                        <a href="tel:+5521999999999" class="text-light text-decoration-none">+55 (21) 99999-9999</a><br>
+                        <a href="mailto:contato@exemplo.com" class="text-light text-decoration-none">contato@exemplo.com</a>
+                    </address>
+                </div>
+            </div>
+
+            <hr class="bg-light">
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Nome da Empresa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+      </footer>
+</body>
+
+</html>
